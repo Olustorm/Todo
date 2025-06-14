@@ -1,6 +1,6 @@
 # Todo App - AltSchool Frontend Assignment
 
-A feature-rich Todo application built with **React 19**, **Tanstack Query**, **Tailwind CSS**, and **Shadcn UI**.
+A feature-rich Todo application built with **React 19**, **Tanstack Query**, **Tailwind CSS**.
 
 ## 📂 Features
 - Todo Listing with Pagination
