@@ -1,6 +1,6 @@
 # Todo App - AltSchool Frontend Assignment
 
-A feature-rich Todo application built with **React 19**, **Tanstack Query**, **Tailwind CSS**.
+A feature-rich Todo application built with **React 19**, **Tanstack Query**, **Tailwind CSS**
 
 ## 📂 Features
 - Todo Listing with Pagination
@@ -15,7 +15,7 @@ A feature-rich Todo application built with **React 19**, **Tanstack Query**, **T
 - Offline Persistence with Dexie.js
 
 ## 🚀 Live Demo
-<!-- [Live Application](https://app.vercel.app) -->
+[Live Application](https://todo-project-snowy.vercel.app/)
 
 ## 🛠️ Tech Stack
 - React 19+ with Hooks
