@@ -1,4 +1,4 @@
-# Todo App - AltSchool Frontend Assignment
+# Todo App - AltSchool Frontend Exam
 
 A feature-rich Todo application built with **React 19**, **Tanstack Query**, **Tailwind CSS**
 
