@@ -16,6 +16,7 @@ A feature-rich Todo application built with **React 19**, **Tanstack Query**, **T
 
 ## 🚀 Live Demo
 [Live Application](https://todo-project-snowy.vercel.app/)
+https://todo-two-phi-50.vercel.app/ 
 
 ## 🛠️ Tech Stack
 - React 19+ with Hooks
@@ -36,7 +37,6 @@ A feature-rich Todo application built with **React 19**, **Tanstack Query**, **T
 
 ## 📄 Installation
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://Olustorm/Todo
 npm install
 npm run dev
