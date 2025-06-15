@@ -2,14 +2,14 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
   const getPageNumbers = () => {
     const pages = [];
     const showPages = 5;
-    let startPage = Math.max(1, currentPage - Math.floor(showPages / 2));
-    let endPage = Math.min(totalPages, startPage + showPages - 1);
+    let start = Math.max(1, currentPage - Math.floor(showPages / 2));
+    let end = Math.min(totalPages, start + showPages - 1);
     
-    if (endPage - startPage + 1 < showPages) {
-      startPage = Math.max(1, endPage - showPages + 1);
+    if (end - start + 1 < showPages) {
+      start = Math.max(1, end - showPages + 1);
     }
     
-    for (let i = startPage; i <= endPage; i++) {
+    for (let i = start; i <= end; i++) {
       pages.push(i);
     }
     
@@ -17,30 +17,31 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
   };
 
   return (
-    <div className="flex items-center justify-center space-x-2">
+    <div className="flex justify-center items-center gap-2">
       <button 
         onClick={() => onPageChange(currentPage - 1)} 
         disabled={currentPage === 1}
-        className="btn-secondary disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-1"
+        className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
+          currentPage === 1 
+            ? 'bg-gray-100 text-gray-400 cursor-not-allowed' 
+            : 'bg-white text-gray-700 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 hover:text-white shadow-md hover:shadow-lg transform hover:scale-105'
+        }`}
       >
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
-        <span>Previous</span>
+        ← Previous
       </button>
       
-      <div className="flex items-center space-x-1">
-        {getPageNumbers().map(page => (
+      <div className="flex gap-1">
+        {getPageNumbers().map(pageNum => (
           <button
-            key={page}
-            onClick={() => onPageChange(page)}
+            key={pageNum}
+            onClick={() => onPageChange(pageNum)}
             className={`w-10 h-10 rounded-lg font-medium transition-all duration-200 ${
-              page === currentPage
-                ? 'bg-blue-600 text-white shadow-md'
-                : 'text-gray-700 hover:bg-gray-100'
+              pageNum === currentPage
+                ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg transform scale-110'
+                : 'bg-white text-gray-700 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 hover:text-white shadow-md hover:shadow-lg transform hover:scale-105'
             }`}
           >
-            {page}
+            {pageNum}
           </button>
         ))}
       </div>
@@ -48,12 +49,13 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
       <button 
         onClick={() => onPageChange(currentPage + 1)} 
         disabled={currentPage === totalPages}
-        className="btn-secondary disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-1"
+        className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
+          currentPage === totalPages 
+            ? 'bg-gray-100 text-gray-400 cursor-not-allowed' 
+            : 'bg-white text-gray-700 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 hover:text-white shadow-md hover:shadow-lg transform hover:scale-105'
+        }`}
       >
-        <span>Next</span>
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
+        Next →
       </button>
     </div>
   );
